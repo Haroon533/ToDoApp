@@ -1,0 +1,1 @@
+import{_ as o,o as t,aP as e}from"./index-4613d788.js";const a={};function c(n,r,s,_,p,u){return t(),e("h3",null,"About")}const l=o(a,[["render",c]]);export{l as default};
