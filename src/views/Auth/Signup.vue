@@ -111,7 +111,7 @@ export default {
                     });
                     store.state.username = this.username
                     localStorage.setItem("username",JSON.stringify(this.username))
-                    this.$router.push('/Today')
+                    this.$router.push('/ToDoApp/Today')
                 }).catch(error =>{
                     this.Iserror = true
                     // this.Whaterror = error.response.data.error

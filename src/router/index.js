@@ -8,41 +8,41 @@ const routes = [
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
-        path: '/',
+        path: '/ToDoApp',
         name: 'Login',
         component: () => import('@/views/Auth/Login.vue'),
           
           },
           {
-            path: '/Signup',
+            path: 'ToDoApp/Signup',
             name: 'Signup',
             component: () => import('@/views/Auth/Signup.vue'),
               
               },
 
       {
-        path: '/Today',
+        path: 'ToDoApp/Today',
         name: 'Today',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () => import('@/views/today.vue'),
-        children:[{path:"/:id",name:"details",component:{pla}}]
+        children:[{path:"/ToDoApp/:id",name:"details",component:{pla}}]
       },
       {
-    path: '/Calendar',
+    path: 'ToDoApp/Calendar',
     name: 'Calendar',
     component: () => import('@/views/calendar.vue'),
       
       },
       {
-        path: '/about',
+        path: 'ToDoApp/about',
         name: 'about',
         component: () => import('@/views/about.vue'),
           
           },
           {
-            path: '/Stickwall',
+            path: 'ToDoApp/Stickwall',
             name: 'Stickwall',
             component: () => import('@/views/Stickwall.vue'),
               

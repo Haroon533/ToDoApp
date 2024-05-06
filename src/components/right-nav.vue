@@ -86,7 +86,7 @@
     </v-list-item-action>
           </v-list-item-contents>
         </v-list-item>
-        <v-list-item to='../Stickwall'>
+        <v-list-item to='/ToDoApp/Stickwall'>
           <v-list-item-icon style="padding-right: 15px;">
             <v-icon>mdi-sticker-outline</v-icon>
           </v-list-item-icon>
@@ -195,7 +195,7 @@
       </v-list>
       <template v-slot:append>
           <div class="pa-2">
-            <v-btn block prepend-icon="mdi-logout" to="/" variant="plain" style="justify-content: start;">
+            <v-btn block prepend-icon="mdi-logout" to="/ToDoApp" variant="plain" style="justify-content: start;">
   Sign out
 </v-btn>
           </div>
@@ -232,7 +232,7 @@
 import store from '../store/index.js';
   export default {
     data: () => ({ 
-        drawer: null ,
+        drawer: true ,
         username:store.state.username,
 
       items12: [
@@ -255,12 +255,20 @@ import store from '../store/index.js';
         menu3:false,
         MyName:"",
         SearchList:"",
-        myImg:"",
-        ImgUrl: JSON.parse(localStorage.getItem("ImgUrl")) || "../src/assets/person_avatar_account_user_icon_191606.png",
+        myImg: "",
+        ImgUrl: JSON.parse(localStorage.getItem("ImgUrl")) || "https://pic.onlinewebfonts.com/thumbnails/icons_571034.svg",
         rules: {
         required: value => !!value || 'Field is required',
       },
        }),
+       mounted(){
+        try{
+          this.ImgUrl.value
+        }
+catch{
+  console.log("ddd")
+}
+},
        methods:{
         addNewList(){
           store.commit("ADD_list",{
@@ -297,7 +305,10 @@ import store from '../store/index.js';
   console.log("Enter key pressed");
 },
 PassNaI(){
-  // console.log(myImg.value)
+   
+  console.log("my img"+this.myImg)
+  console.log("img url"+ this.ImgUrl)
+
     this.MyName = store.state.username
 },
 SavePersonalEdit(){
@@ -314,6 +325,8 @@ testClick(){
 RenderImg(){
   this.ImgUrl= URL.createObjectURL(this.myImg)
   localStorage.setItem("ImgUrl",JSON.stringify(this.ImgUrl))
+  
+
 
 }
 
@@ -330,7 +343,8 @@ RenderImg(){
         }
        }
 
-       }
+       },
+       
   }
 </script>
 

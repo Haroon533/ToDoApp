@@ -39,7 +39,7 @@
                     </v-card-text>
                     <v-divider light></v-divider>
                     <v-card-actions>
-                        <v-btn to="/Signup" rounded="xl" color="indigo" variant="flat">Sign up</v-btn>
+                        <v-btn to="/ToDoApp/Signup" rounded="xl" color="indigo" variant="flat">Sign up</v-btn>
                         <v-spacer></v-spacer>
                         <v-btn @click.prevent="login()" rounded="xl" color="primary" variant="flat">
                             Login
@@ -74,7 +74,7 @@ export default {
                         color: "success"
                     });
 
-                this.$router.push('/Today')
+                this.$router.push('/ToDoApp/Today')
 
             }).catch(error =>{
                 this.error = true;

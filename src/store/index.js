@@ -12,8 +12,8 @@ const store = createStore({
          events : JSON.parse(localStorage.getItem("tasks")) || [],
 
           items: [
-            { title: 'Today', icon: 'mdi-format-list-bulleted',to:'/Today',id:1 },
-            { title: 'Calendar', icon: 'mdi mdi-calendar',to:'/Calendar',id:2},
+            { title: 'Today', icon: 'mdi-format-list-bulleted',to:'/ToDoApp/Today',id:1 },
+            { title: 'Calendar', icon: 'mdi mdi-calendar',to:'/ToDoApp/Calendar',id:2},
             // { title: 'Stick Wall', icon: 'mdi-sticker-outline',to:'/Stickwall' ,id:3 ,},
           ],
           

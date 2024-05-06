@@ -129,7 +129,7 @@
     border-radius: 20px;background-color: #f4f4f4;border: none;padding: 20px;
 ">
 
-  <h3>Task : {{ listit }}</h3>
+  <h3>Task</h3>
     <v-text-field
    variant="outlined" 
     label="Rename tesk"
