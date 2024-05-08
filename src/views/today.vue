@@ -1,7 +1,8 @@
 <template >
-        <v-container>
+        <div class="space-on-top"></div>
+        <v-container >
   <h1>{{ this.$store.state.items[0].title }}</h1>
-  <div>
+  <div >
     <v-form @submit.prevent="submit(mytext)">
       <v-text-field
             label="Add New Task"
@@ -17,7 +18,7 @@
       <v-expansion-panel
       >
         <v-expansion-panel-title collapse-icon="mdi-filter-minus-outline" expand-icon="mdi-filter-plus-outline">
-          
+          Fillter
         </v-expansion-panel-title>
         <v-expansion-panel-text>
           <div style="display: flex;">
@@ -120,13 +121,11 @@
     </v-list>
   </div>
 
-  
-<v-col cols="3" lg="3" md="3">
      <v-navigation-drawer  v-model="Sidedrawer"
-      absolute
+     v-if="Sidedrawer"
       :width="350"
      location="right" style="
-    border-radius: 20px;background-color: #f4f4f4;border: none;padding: 20px;
+    border-radius: 20px;background-color: #f4f4f4;border: none;padding: 20px;transition: all 3s ease-in-out 3s;
 ">
 
   <h3>Task</h3>
@@ -180,10 +179,6 @@
           </div>
         </template>
     </v-navigation-drawer>
-
-
-  
-</v-col>
 <v-btn @click="dialog = true" id="DeleteBtn" :class="this.$store.state.drawer?'DeleteBtn1':'DeleteBtn2'" color="#db3024" icon="mdi-delete">
 </v-btn>
 
@@ -222,6 +217,7 @@
 
 <rightNav></rightNav>
 </template>
+
 <script>
 import store from '@/store/index.js'
 import notfication from '../components/notfication.vue'
@@ -257,7 +253,7 @@ data:()=>({
 }),
 
 mounted(){
-  // localStorage.setItem("tasks",JSON.stringify(this.events))
+
 
 },
 methods: {
@@ -270,7 +266,7 @@ methods: {
         this.TimeTask = event.duration
         this.PassIdofArry = event.id
 
-        
+
     //   this.itemss.forEach(((element) => 
     //   {
 
@@ -281,7 +277,7 @@ methods: {
     // // console.log(this.iconList)
 
     // }))
-      console.log(store.state.drawer)
+      console.log(this.Sidedrawer)
     },
   
     doneEvent(id){
@@ -399,6 +395,16 @@ if (min < 10) mm = '0' + min;
 
           })
         },
+//         hideThisDetails(){
+//           let r= document.querySelector(".nav-right-det")
+
+// if(this.Sidedrawer){        r.style.display= "block";
+//      }else{
+//  r.style.display= "none";
+
+//      }
+
+//         },
 },
 
 computed:{
@@ -470,5 +476,15 @@ Fillter(){
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
+}
+.space-on-top{
+  display: none;
+}
+@media (max-width: 1030px) {
+  .space-on-top{
+  display: block;
+  height: 50px;
+}
+
 }
 </style>

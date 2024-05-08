@@ -1,8 +1,10 @@
 <template>
-      <v-navigation-drawer @click="testClick()"  permanent v-model="drawer" style="margin: 7px;
+
+      <v-navigation-drawer @click="testClick()" v-model="drawer" style="margin: 7px;
     border-radius: 20px;background-color: #f4f4f4;border: none;">
       <!--  -->
-      <v-app-bar-nav-icon @click="drawer = !drawer" :style="drawer ?{float:'right'}:{position:'absolute',right:'-80px',top:'5px',backgroundColor:'white'}"></v-app-bar-nav-icon>
+      
+      <v-app-bar-nav-icon @click="drawer = !drawer" :style="drawer ?{float:'right'}:{position:'absolute',right:'-80px',top:'5px',backgroundColor:'#ddd'}"></v-app-bar-nav-icon>
       <v-menu  v-model="menu3"  :close-on-content-click="false"  :location="location">
         <template v-slot:activator="{ props }">
       <v-list-item  class="uandl">
@@ -184,7 +186,7 @@
           @click="isActive.value = false"
         ></v-btn>
         <v-btn v-bind:disabled="!newList"   @click.prevent="addNewList() ,isActive.value = false" style="background-color: #ffd43a;" >
-  Save changes
+  Save
 </v-btn>
       </v-card-actions>
     </v-card>

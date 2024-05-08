@@ -1,4 +1,6 @@
 <template>
+          <div class="space-on-top"></div>
+
   <v-container>
     <v-row>
       <v-tooltip text="Tap to Edit or Delete" >
@@ -182,5 +184,15 @@ console.log(this.PassIdOfCard)
 </script>
 
 <style>
+.space-on-top{
+  display: none;
+}
+@media (max-width: 1030px) {
+  .space-on-top{
+  display: block;
+  height: 70px;
+}
+
+}
 
 </style>

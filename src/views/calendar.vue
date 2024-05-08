@@ -1,4 +1,6 @@
 <template>
+          <div class="space-on-top"></div>
+
   <v-container>
   <FullCalendar :options="calendarOptions" ></FullCalendar>
 </v-container>
@@ -108,5 +110,14 @@ export default {
 </script>
 
 <style>
+.space-on-top{
+  display: none;
+}
+@media (max-width: 1030px) {
+  .space-on-top{
+  display: block;
+  height: 70px;
+}
 
+}
 </style>
