@@ -11,7 +11,9 @@
             class="pt-3 pr-4"
             @click:prepend-inner="submit(mytext)"
             v-model="mytext"
+            :rules="rules.required2"
           ></v-text-field>
+          
     </v-form>
   
     <v-expansion-panels class="mb-1">
@@ -248,7 +250,9 @@ data:()=>({
       closeOnContentClick: true,
       openDraw:store.state.drawer,
       rules: {
-        required: [(v) =>  v.length>0 || "It is better for tasks to be in list"]
+        required: [(v) =>  v.length>0 || "It is better for tasks to be in list"],
+        required2: ["Add name of task"],
+
       },
 }),
 
@@ -307,7 +311,10 @@ if (dd < 10) dd = '0' + dd;
 if (mm < 10) mm = '0' + mm;
 if (Hour < 10) dd = '0' + Hour;
 if (min < 10) mm = '0' + min;
-
+          if(this.mytext===""){
+            this.rules.required2
+            console.log("empty text")
+          }else{
           store.commit("ADD_EVENT",{
             title:this.mytext,
             id:(store.state.events.length)+1,
@@ -317,11 +324,13 @@ if (min < 10) mm = '0' + min;
           localStorage.setItem("tasks",JSON.stringify(this.events))
 
           this.mytext = ""
+        
           store.commit("ADD_Notfication",{
             display:true,
             text:"Task was successfully added",
             color:"success",
           })
+        }
           console.log(this.events)
      },
         SaveChanges(){

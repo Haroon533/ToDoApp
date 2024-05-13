@@ -92,7 +92,7 @@
           <v-list-item-icon style="padding-right: 15px;">
             <v-icon>mdi-sticker-outline</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>Stick wall</v-list-item-title>
+          <v-list-item-title>Sticky wall</v-list-item-title>
           <v-list-item-action>
             {{ store.state.Stickwall.length}}
     </v-list-item-action>
@@ -234,7 +234,7 @@
 import store from '../store/index.js';
   export default {
     data: () => ({ 
-        drawer: true ,
+        drawer: false ,
         username:store.state.username,
 
       items12: [
