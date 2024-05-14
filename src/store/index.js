@@ -41,7 +41,7 @@ const store = createStore({
           class:'success',
         },
         username:JSON.parse(localStorage.getItem("username")) || "Person",
-        drawer:true,
+        drawer:false,
       }
     },
     getters:{

@@ -8,10 +8,10 @@
             label="Add New Task"
             prepend-inner-icon="mdi-plus"
             variant="outlined"
-            class="pt-3 pr-4"
+            class="pt-3 pr-4 "
             @click:prepend-inner="submit(mytext)"
             v-model="mytext"
-            :rules="rules.required2"
+            id="Add-input12"
           ></v-text-field>
           
     </v-form>
@@ -251,9 +251,8 @@ data:()=>({
       openDraw:store.state.drawer,
       rules: {
         required: [(v) =>  v.length>0 || "It is better for tasks to be in list"],
-        required2: ["Add name of task"],
-
       },
+     
 }),
 
 mounted(){
@@ -311,9 +310,9 @@ if (dd < 10) dd = '0' + dd;
 if (mm < 10) mm = '0' + mm;
 if (Hour < 10) dd = '0' + Hour;
 if (min < 10) mm = '0' + min;
+let r= document.querySelector(".v-input__control")
           if(this.mytext===""){
-            this.rules.required2
-            console.log("empty text")
+            r.style.color='red'
           }else{
           store.commit("ADD_EVENT",{
             title:this.mytext,
@@ -322,7 +321,7 @@ if (min < 10) mm = '0' + min;
             duration: Hour+":"+min
           })
           localStorage.setItem("tasks",JSON.stringify(this.events))
-
+          r.style.color=''
           this.mytext = ""
         
           store.commit("ADD_Notfication",{
@@ -331,7 +330,6 @@ if (min < 10) mm = '0' + min;
             color:"success",
           })
         }
-          console.log(this.events)
      },
         SaveChanges(){
           let event = this.events.filter(ev => ev.id == this.PassIdofArry)[0]
