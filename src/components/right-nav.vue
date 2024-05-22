@@ -197,7 +197,7 @@
       </v-list>
       <template v-slot:append>
           <div class="pa-2">
-            <v-btn block prepend-icon="mdi-logout" to="/ToDoApp" variant="plain" style="justify-content: start;">
+            <v-btn block prepend-icon="mdi-logout" @click.prevent="signout()" to="/ToDoApp/" variant="plain" style="justify-content: start;">
   Sign out
 </v-btn>
           </div>
@@ -328,9 +328,10 @@ RenderImg(){
   this.ImgUrl= URL.createObjectURL(this.myImg)
   localStorage.setItem("ImgUrl",JSON.stringify(this.ImgUrl))
   
-
-
-}
+},
+signout(){
+sessionStorage.removeItem("login")
+},
 
        },
        computed:{

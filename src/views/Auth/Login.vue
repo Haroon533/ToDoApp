@@ -73,7 +73,7 @@ export default {
                         text :"Your account has been Login succufully",
                         color: "success"
                     });
-
+                    sessionStorage.setItem("login",true)
                 this.$router.push('/ToDoApp/Today')
 
             }).catch(error =>{

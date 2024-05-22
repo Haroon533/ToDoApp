@@ -111,6 +111,7 @@ export default {
                     });
                     store.state.username = this.username
                     localStorage.setItem("username",JSON.stringify(this.username))
+                    sessionStorage.setItem("login",true)
                     this.$router.push('/ToDoApp/Today')
                 }).catch(error =>{
                     this.Iserror = true

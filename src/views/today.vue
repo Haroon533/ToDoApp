@@ -23,8 +23,8 @@
           Fillter
         </v-expansion-panel-title>
         <v-expansion-panel-text>
-          <div style="display: flex;">
-          <div style="width: 30%;">
+          <div class="fill-dev" >
+          <div class=" fillter-search">
           <v-responsive max-width="244">
           <v-text-field
         append-inner-icon="mdi-magnify"
@@ -36,12 +36,12 @@
       ></v-text-field>
     </v-responsive>
   </div>
-  <div style="width: 70%;">
-    <div style="display: flex;align-items: center;width: 100%;"><span class="pr-4">List</span>
+  <div class="fillter-list">
+    <div style="display: flex;align-items: center;width: 100%;">
          
          <v-select
  clearable
- label="Select"
+ label="Select List"
  :items="itemss"
  item-title="title"
  v-model="Fillterlist"
@@ -486,6 +486,30 @@ Fillter(){
 }
 .space-on-top{
   display: none;
+}
+.fill-dev{
+  display: flex;
+}
+@media (max-width: 800px) {
+  .fillter-list,.fillter-search{
+    width: 100%;
+  }
+  .fillter-search{
+    padding-bottom: 20px;
+  }
+  .fill-dev{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 800px) {
+  .fillter-list{
+    width: 70%;
+  }
+  .fillter-search{
+    width: 30%;
+    padding-right: 20px;
+  }
 }
 @media (max-width: 1030px) {
   .space-on-top{

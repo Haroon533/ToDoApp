@@ -27,12 +27,20 @@ const routes = [
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () => import('@/views/today.vue'),
-        children:[{path:"/ToDoApp/:id",name:"details",component:{pla}}]
+        children:[{path:"/ToDoApp/:id",name:"details",component:{pla}}],
+        beforeEnter:(to,from,next)=>{
+          let isAuth =sessionStorage.getItem("login")
+          return isAuth?next():next("/ToDoApp")
+        },
       },
       {
     path: 'ToDoApp/Calendar',
     name: 'Calendar',
     component: () => import('@/views/calendar.vue'),
+    beforeEnter:(to,from,next)=>{
+      let isAuth =sessionStorage.getItem("login")
+      return isAuth?next():next("/ToDoApp")
+    },
       
       },
       {
@@ -45,7 +53,10 @@ const routes = [
             path: 'ToDoApp/Stickwall',
             name: 'Stickwall',
             component: () => import('@/views/Stickwall.vue'),
-              
+            beforeEnter:(to,from,next)=>{
+              let isAuth =sessionStorage.getItem("login")
+              return isAuth?next():next("/ToDoApp")
+            },
               },
                   
            
