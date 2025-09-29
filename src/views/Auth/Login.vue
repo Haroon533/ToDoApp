@@ -14,7 +14,7 @@
                         v-model="error"
                         icon="mdi-close"
                         >  please use this email :"eve.holt@reqres.in",<br>
-                            and this password :"pistol",<br>
+                            and this password :"cityslicka",<br>
                             beacuse the fake api (reqres.in)
 </v-alert>
                     <v-card-text>

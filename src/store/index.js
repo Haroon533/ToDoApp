@@ -70,7 +70,7 @@ const store = createStore({
     actions: {
        Login({commit},payload){
         return new Promise ((resolve,reject) =>{
-          axios.post('https://reqres.in/api/login',payload)
+          axios.post('https://reqres.in/api/login',payload,{headers: {'x-api-key': 'reqres-free-v1'}})
           .then(({data , status})=>{
             if(status === 200){
               let token = data.token
@@ -81,13 +81,13 @@ const store = createStore({
             }
           }).catch(er =>{
               reject(er)
-              console.log(er.response.data.error)
+              console.log("Error in fake Api please connect with developer")
           })
         })
        },
        register({commit},p){
         return new Promise((resolve , reject) =>{
-          axios.post('https://reqres.in/api/register',p)
+          axios.post('https://reqres.in/api/register',p,{headers: {'x-api-key': 'reqres-free-v1'}})
           .then(({data,status}) =>{
           if(status ===200){
               resolve (true);
