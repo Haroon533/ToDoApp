@@ -65,7 +65,7 @@
                     </v-card-text>
                     <v-divider></v-divider>
                          <v-card-actions>
-                            <v-btn to="/" rounded="xl" color="indigo" variant="flat">Login</v-btn>
+                            <v-btn to="/ToDoApp/" rounded="xl" color="indigo" variant="flat">Login</v-btn>
                             <v-spacer></v-spacer>
                             <v-btn @click.prevent="register()" rounded="xl" color="success" variant="flat">Register<v-icon>mdi-arrow-up</v-icon></v-btn>
                          </v-card-actions>
